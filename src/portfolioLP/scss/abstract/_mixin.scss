@@ -1,0 +1,209 @@
+@mixin mediaQuery($breakpoint: pc) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+@mixin pagetop($size: 50px, $color: #fff, $bg: #000) {
+  //pagetop自作するとき
+  display: block;
+  width: $size !important;
+  height: $size;
+  background: $bg;
+  border-radius: 50%;
+  position: relative;
+  // position: fixed;
+  // bottom: 0%;
+  // right: 0;
+  z-index: 11;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 48%;
+    left: 40%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid $color;
+    border-right: 1px solid $color;
+    transform: rotate(-45deg);
+    z-index: 12;
+  }
+  @include mediaQuery(pc) {
+    bottom: 12%;
+  }
+}
+@mixin fillArrow($dir: top, $size: 20px, $color: #000, $type: null) {
+  display: inline-block;
+  width: 0;
+  height: 0;
+
+  $reverseDir: "";
+  $sizeHalf: round($size / 2);
+  @if $dir == top {
+    $reverseDir: bottom;
+  } @else if $dir == right {
+    $reverseDir: left;
+  } @else if $dir == bottom {
+    $reverseDir: top;
+  } @else if $dir == left {
+    $reverseDir: right;
+  }
+  @if $type == narrow {
+    border: $sizeHalf solid transparent;
+    border-#{$reverseDir}: $size solid $color;
+  } @else if $type == wide {
+    @if $dir == top or $dir == bottom {
+      border-right: $size solid transparent;
+      border-left: $size solid transparent;
+    } @else if $dir == right or $dir == left {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+    }
+    border-#{$dir}: $sizeHalf solid transparent;
+    border-#{$reverseDir}: $sizeHalf solid $color;
+  } @else if $type == null {
+    border: $sizeHalf solid transparent;
+    border-#{$reverseDir}-color: $color;
+  }
+}
+@mixin solidArrow(
+  $dir: top,
+  $size: 10px,
+  $weight: 2px,
+  $color: #000,
+  $spread: null
+) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  border-top: $weight solid $color;
+  border-right: $weight solid $color;
+
+  $transformValue: "";
+  @if $dir == top {
+    $transformValue: rotate(-45deg);
+  } @else if $dir == right {
+    $transformValue: rotate(45deg);
+  } @else if $dir == bottom {
+    $transformValue: rotate(135deg);
+  } @else if $dir == left {
+    $transformValue: rotate(-135deg);
+  }
+  @if $spread != null and type-of($spread) == number {
+    $transformValue: $transformValue + " skew(#{$spread}deg, #{$spread}deg)";
+  }
+  transform: $transformValue;
+}
+
+//layout
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin f-gridLayout($column: 2, $rowgap: 2, $spmb: 20, $spcol2: false) {
+  margin-right: percentage(-$rowgap/100);
+  margin-bottom: percentage(-$rowgap/100);
+  &__item {
+    margin-right: percentage($rowgap/100);
+    margin-bottom: percentage($rowgap/100);
+  }
+  @if $spcol2 == true {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include mediaQuery(pc) {
+    @if $spcol2 == false {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__item {
+      width: percentage(((100 - $column * $rowgap) / $column)/100);
+    }
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  @include mediaQuery(sp) {
+    &__item {
+      margin-bottom: $spmb + px;
+    }
+    & & {
+      margin-bottom: 0;
+    }
+    @if $spcol2 == true {
+      justify-content: space-between;
+      &__item {
+        width: 48%;
+      }
+    }
+  }
+}
+
+// @mixin flexLayout($column) {
+//   @include mediaQuery(pc) {
+//     display: flex;
+//     justify-content: space-between;
+//     &__item {
+//       width: percentage(((100 - $column * 2) / $column)/100);
+//     }
+//     &.reverse {
+//       flex-direction: row-reverse;
+//     }
+//   }
+// }
+@mixin gridLayout($column: 2, $gap: 20, $sp: false) {
+  display: grid;
+  grid-row-gap: $gap + px;
+  @if $sp == true {
+    grid-template-columns: repeat($column, 1fr);
+    grid-column-gap: $gap + px;
+  } @else if $sp == false {
+    @include mediaQuery(pc) {
+      grid-template-columns: repeat($column, 1fr);
+      grid-column-gap: $gap + px;
+    }
+  }
+}
+@mixin btnTemplate($btn_color, $btn_bg, $arr_width, $btn_radius) {
+  text-align: center;
+  a {
+    background: $btn_bg;
+    border-radius: $btn_radius;
+    width: $btn_style_width;
+    max-width: 100%;
+    padding: 15px 20px;
+    margin: 0 auto;
+    text-align: center;
+    color: $btn_color;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      @include solidArrow(right, $arr_width, 2px, $btn_color);
+      transition: 0.2s;
+    }
+    &:hover {
+      opacity: 0.7;
+      &::after {
+        right: 10px;
+      }
+    }
+  }
+}
+
+@mixin cf() {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

@@ -1,0 +1,45 @@
+.first-view {
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $color_primary;
+    z-index: 1;
+  }
+  &__txt {
+    position: relative;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #fff;
+      z-index: 1;
+    }
+  }
+  @include mediaQuery(pc) {
+    padding: 100px 0;
+    &__txt {
+      width: 600px;
+      max-width: 96%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.u-line {
+  &--01,&--02 {
+    position: relative;
+    background: linear-gradient(#ffd760, #ffd760) 0 bottom/0 10px no-repeat;
+  }
+}

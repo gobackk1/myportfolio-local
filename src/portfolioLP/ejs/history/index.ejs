@@ -1,0 +1,123 @@
+<%
+  var data = {
+    pageTitle:'History'
+  }
+%>
+<%- include(relativePath + 'widgets/_header'); %>
+<%- include(relativePath + 'widgets/_drawer'); %>
+<main class="under-page">
+  <div class="page-band">
+    <h1 class="page-band__ttl"><%- data.pageTitle %></h1>
+  </div>
+  <div class="inner">
+    <%- include(relativePath + 'widgets/_breadcrumb',{data:data}); %>
+    <div class="content">
+      <p>今までの経歴をまとめました。履歴書としてご参照ください。</p>
+      <h2 class="title-l">学歴</h2>
+      <div class="flex-row reverse">
+        <div class="col-2">
+          <figure><img src="../assets/img/history_school.jpg" alt="学歴"></figure>
+        </div>
+        <div class="col-2">
+          <table class="table-A">
+            <tr>
+              <th>2007年3月</th>
+              <td>越谷市立 中央中学校 卒業</td>
+            </tr>
+            <tr>
+              <th>2007年4月</th>
+              <td>浦和学院高等学校卒業 普通科 入学</td>
+            </tr>
+            <tr>
+              <th>2010年3月</th>
+              <td>浦和学院高等学校卒業 普通科 卒業</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <h2 class="title-l">職歴</h2>
+      <h3 class="title-m--typeB">倉庫作業</h3>
+      <div class="flex-row">
+        <div class="col-2">
+          <figure><img src="../assets/img/history_img001.jpg" alt="倉庫作業"></figure>
+          <p>高校卒業後、ペット用品を扱う物流倉庫で6年間倉庫作業をしました。商品をコンテナへ梱包する作業や、入荷商品が正しいかチェックする作業を通して、素早く正確に作業をするためにどうすればいいか考える力がついたと思います。<br>3年目にはフロアリーダーを任され、監督者として作業がしやすい仕事の流れを考え、スタッフへの指示出しなどを行いました。この経験を通して、人と協力して仕事をする大変さを学び、また自分は作業者として手を動かしていたほうが向いていると感じ始めました。</p>
+        </div>
+        <div class="col-2">
+          <table class="table-A">
+            <tr>
+              <th>2010年4月</th>
+              <td><em>株式会社 ジャペル 入社</em><br>物流管理課で倉庫作業を担当
+                <ul class="list-A">
+                  <li class="list-A__item">フォークリフト作業</li>
+                  <li class="list-A__item">商品のピッキング</li>
+                  <li class="list-A__item">EDIをやり取りして作業指示に変換するオペレーター</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>2012年4月</th>
+              <td>フロアリーダーになり、より上流工程を担当
+                <ul class="list-A">
+                  <li class="list-A__item">在庫管理、新旧商品を整理して作業者がピッキングできるように棚を整理</li>
+                  <li class="list-A__item">アルバイトスタッフの管理</li>
+                  <li class="list-A__item">作業改善</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>2016年2月</th>
+              <td><em>株式会社 ジャペル 退社</em></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <h3 class="title-m--typeB">配送ドライバー</h3>
+      <div class="flex-row">
+        <div class="col-2">
+          <figure><img src="../assets/img/history_driver.jpg" alt="ドライバー"></figure>
+          <p>住宅設備機器を扱う企業の配送ドライバーを担当しました。配送の仕事は楽しかったのですが、仕事に慣れてくると空き時間が目立ちました。時間がもったいないから、工事の仕事もやらせてもらったり、ひっそり独学で投資の勉強をしていました。その中で、新しいことを勉強する楽しさを見出し、以前から興味があったWeb制作の勉強を始めました。</p>
+        </div>
+        <div class="col-2">
+          <table class="table-A">
+            <tr>
+              <th>20016年4月</th>
+              <td><em>株式会社 永久 入社</em><br>住宅設備機器の配送ドライバーとして、主に東京都・埼玉県・千葉県の新築・リフォーム現場へ納品
+                <ul class="list-A">
+                  <li class="list-A__item">軽トラック、1.5tトラックの運転</li>
+                  <li class="list-A__item">商品の配送、納品、積み出し</li>
+                  <li class="list-A__item">給湯器・洗面化粧台の設置</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>2018年7月</th>
+              <td><em>株式会社 永久 退社</em></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <h3 class="title-m--typeB">Webサイト制作会社</h3>
+      <div class="flex-row">
+        <div class="col-2">
+          <figure><img src="../assets/img/history_web.jpg" alt="Webサイト制作会社"></figure>
+          <p></p>
+        </div>
+        <div class="col-2">
+          <table class="table-A">
+            <tr>
+              <th>2018年10月</th>
+              <td><em>株式会社 ミリオンドリーム 入社</em><br>Webサイト制作会社のコーダーとして、デザインカンプから新規コーディング・修正作業を担当<br><div class="btn"><a href="/skill">skillページへ</a></div>
+              </td>
+            </tr>
+            <tr>
+              <th>2019年10月</th>
+              <td><em>株式会社 ミリオンドリーム 在職中</em></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+<%- include(relativePath + 'widgets/_footer'); %>

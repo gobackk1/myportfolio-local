@@ -1,0 +1,44 @@
+%list-item {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.list-A {
+  ul {
+    margin: 0 0 0 20px;
+  }
+  &__item {
+    @extend %list-item;
+    padding: 5px 0 5px 20px;
+    &::before {
+      left: 0;
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: $color_primary;
+    }
+  }
+  @include mediaQuery(sp) {
+    margin-bottom: 20px;
+  }
+}
+
+.list-B {
+  margin-bottom: 20px;
+  &__item {
+    @extend %list-item;
+    padding: 2px 0 2px 12px;
+    &::before {
+      left: 0;
+      width: 6px;
+      height: 2px;
+      background: $color_text;
+    }
+  }
+}

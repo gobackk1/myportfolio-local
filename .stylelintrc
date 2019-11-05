@@ -1,0 +1,46 @@
+{
+  "plugins": [
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-scss"
+  ],
+  "_comments":{
+    "plugin/declaration-block-no-ignored-properties":"inlineにmarginをつけるなど、不要な記述を検出するプラグイン",
+    "plugin/no-unsupported-browser-features":"サポートが不十分なプロパティがある場合、対象とブラウザを検出するプラグイン。通知を減らすためにignoreしてあるルールがあるのでチェックしておく",
+    "length-zero-no-unit":"0pxや0%は0と記述",
+    "declaration-block-no-duplicate-properties":"同ルールセット内に重複したプロパティを許可しない",
+    "font-family-no-missing-generic-family-keyword": "font-familyの最後にsans-serifかserifかが必要",
+    "declaration-block-no-shorthand-property-overrides":"ショートハンドの後に値を上書きするのを許可しない",
+    "no-duplicate-selectors":"重複したセレクターを許可しない",
+    "value-no-vendor-prefix":"ベンダープレフィックスを許可しない。後でAutoPrefixerでまとめてつけるから",
+    "selector-list-comma-newline-after":"グループセレクタを改行しない"
+  },
+  "rules": {
+    "plugin/declaration-block-no-ignored-properties": true,
+    "plugin/no-unsupported-browser-features": [true, {
+      "browsers": [
+        "Last 5 Safari versions",
+        "Last 5 iOS versions",
+        "Last 5 Chrome versions",
+        "Last 5 ChromeAndroid versions",
+        "IE 11",
+        "Last 5 Edge versions",
+        "Last 5 Firefox versions",
+        "Last 5 FirefoxAndroid versions"
+      ],
+      "ignore": ["rem","flexbox","outline","pointer","css-touch-action","css-appearance"]
+    }],
+    "indentation": 2,
+    "length-zero-no-unit": true,
+    "declaration-block-no-duplicate-properties":true,
+    "font-family-no-missing-generic-family-keyword": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "no-duplicate-selectors":true,
+    "value-no-vendor-prefix":true,
+    "media-feature-name-no-vendor-prefix":true,
+    "selector-no-vendor-prefix":true,
+    "at-rule-no-vendor-prefix":true,
+    "property-no-vendor-prefix":true,
+    "selector-list-comma-newline-after":"never-multi-line"
+  }
+}

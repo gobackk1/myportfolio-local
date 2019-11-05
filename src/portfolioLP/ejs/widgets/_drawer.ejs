@@ -1,0 +1,24 @@
+<header class="header">
+  <h1 class="logo"><a href="/">MyPortfolio<span class="logo__sub">by kengo kawabata</span></a></h1>
+  <button class="open-btn" aria-expanded="false" aria-controls="drawer" type="button" aria-label="open-btn">
+    <span class="open-btn__line"></span>
+    <span class="open-btn__line"></span>
+    <span class="open-btn__line"></span>
+  </button>
+</header>
+<div class="drawer" aria-expanded="false" id="drawer" role="menu">
+  <div class="drawer__overlay"></div>
+  <nav class="drawer__nav nav">
+    <button class="close-btn" aria-expanded="false" aria-controls="drawer" type="button">
+      <span class="close-btn__line"></span>
+      <span class="close-btn__line"></span>
+    </button>
+    <ul class="nav__list">
+      <li class="nav__item"><a href="<%= relativePath %>/">HOME</a></li>
+      <li class="nav__item"><a href="<%= relativePath %>history">History</a></li>
+      <li class="nav__item"><a href="<%= relativePath %>skill">Skill</a></li>
+      <li class="nav__item"><a href="<%= relativePath %>works">Works</a></li>
+      <li class="nav__item"><a href="<%= relativePath %>contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,21 @@
+//テーマカラー
+$color_primary: #000; //メインカラー
+$color_primary_light: lighten($color_primary, 15%);
+$color_primary_dark: darken($color_primary, 30%);
+
+$color_secondary: #193098; //サブカラー
+$color_secondary_light: lighten($color_secondary, 15%);
+$color_secondary_dark: darken($color_secondary, 30%);
+
+$color_accent: #d82d0f; //アクセントカラー
+$color_accent_light: lighten($color_accent, 15%);
+$color_accent_dark: darken($color_accent, 30%);
+
+$color_danger:#f44336;
+$color_success:#3d8c67;
+$color_warning:#bb7b2f;
+$color_default:#999999;
+$color_info:$color_primary;
+
+$color_text: #333; //基本テキスト色
+$color_text_accent: $color_danger;

@@ -1,0 +1,19 @@
+<%
+  var data = {
+    pageTitle:'Works'
+  }
+%>
+<%- include(relativePath + 'widgets/_header'); %>
+<%- include(relativePath + 'widgets/_drawer'); %>
+<main class="under-page">
+  <div class="page-band">
+    <h1 class="page-band__ttl"><%- data.pageTitle %></h1>
+  </div>
+  <div class="inner">
+    <%- include(relativePath + 'widgets/_breadcrumb',{data:data}); %>
+    <div class="content">
+      <p>worksページの掲載内容は現在準備中です。</p>
+    </div>
+  </div>
+</main>
+<%- include(relativePath + 'widgets/_footer'); %>

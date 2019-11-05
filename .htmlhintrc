@@ -1,0 +1,18 @@
+{
+  "tagname-lowercase": true,//タグ名がLowerCaseか
+  "attr-lowercase": true,//属性名がLowerCaseか
+  "attr-value-double-quotes": true,//属性の値がダブルクォートでかこまれているか
+  "spec-char-escape": true,//特殊文字がエスケープされているか。
+  "attr-value-not-empty": false,//空の属性がないか
+  "attr-no-duplication": true,//重複属性はないか
+  "doctype-first": true, //DOCTYPE宣言が先頭にあるか
+  "tag-pair": true, //閉じタグが正しいか
+  "spec-char-escape": true, //特殊文字を使用しているか
+  "id-unique": true, //IDはユニークか
+  "src-not-empty": true, //srcの値があるか
+  "attr-no-duplication": true, //同じ属性が複数指定されていないか
+  "alt-require": true,//alt未設定のimgがないか
+  "id-class-value": false,//識別子命名ルール
+  "inline-style-disabled": true,//インラインスタイルがあるかチェック
+  "title-require": true //タイトルタグの中身があるか
+}

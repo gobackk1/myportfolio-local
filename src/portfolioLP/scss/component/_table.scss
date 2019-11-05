@@ -1,0 +1,42 @@
+%table-cmn {
+  width: 100%;
+  margin-bottom: 20px;
+  th {
+    white-space: nowrap;
+    text-align: left;
+  }
+  td {
+    padding-left: 20px;
+  }
+  @include mediaQuery(tab) {
+    td {
+      padding-left: 12px;
+    }
+  }
+}
+
+.table-A {
+  //フッター等の簡易なテーブル
+  @extend %table-cmn;
+  td {
+    border-bottom: 1px solid #d4d4d4;
+    padding: 7px 0 7px 20px;
+  }
+  th {
+    position: relative;
+    padding: 7px 20px 7px 0;
+    font-weight: bold;
+    color: $color_accent;
+    border-bottom: 1px solid $color_accent;
+  }
+}
+
+.table-B {
+  //table-Aの小ver
+  @extend %table-cmn;
+  line-height: 2;
+  @include mediaQuery(pc) {
+    margin-bottom: 0;
+    font-size: $text-small-size;
+  }
+}

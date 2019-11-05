@@ -1,0 +1,139 @@
+//body
+$font_mincho: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro",
+  "ＭＳ 明朝", serif;
+$font_meiryo: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3",
+  "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$font_noto_sans: "Noto Sans JP", "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3",
+  "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
+$base_font_family: $font_noto_sans;
+
+//ヘッダー
+$header_bg: #000;
+$header_text: #fff;
+$header_logo_width: 546;
+$header_info_width: null;
+
+//グローバルナビ
+$nav_height: 50;
+$nav_arrow_size: 3;
+$nav_font: null;
+$nav_bg: $color_primary;
+$nav_bg_hv: $color_primary_light;
+$nav_submenu_bg: $color_danger;
+$nav_submenu_bg_hv: $color_secondary;
+$nav_text: $color_text;
+$nav_subtext: $color_secondary;
+$nav_arrow: $color_danger;
+
+$sp_nav_submenu_bg: $color_danger;
+$sp_nav_bg: $color_primary;
+$sp_nav_text: #fff;
+
+//フッター
+$footer_text:#fff;
+$footer_bg: $color_primary; //url(img/footer_bg.jpg) or $footer_bg
+
+//コピーライト
+$copyright_text: $color_text;
+$copyright_bg: #fff;
+
+//共通ボタン
+$btn_style_font: null;
+$btn_style_border_radius: null;
+$btn_style_width: 200px;
+$btn_style_bg: $color_primary;
+// $btn_style_bg: #ffdbba;
+$btn_style_text: #fff;
+
+//pagetop
+$pagetop_height: 60; //pagetop.pngの高さ(px
+
+//HOME
+$title_font_family: null;
+$sec_pad: 95; //PCの各セクション余白
+
+//ユーティリティクラスの設定削除予定
+$flex_row_gap: 30px; //.flex-rowのmargin
+
+//loopSliderで使う画像サイズ
+$slider_img_width: 400px;
+$slider_img_height: 300px;
+
+//各文字サイズ
+$text_small_size: 70%;
+
+//下層
+//固定ページタイトル
+$page_title_text: $color_text;
+$page_title_bg: url(img/menu_bg.jpg);
+$page_title_font: null;
+
+//タイトル
+$under_h3_text: $color_text;
+$under_h3_bg: url(img/pt_bg003.jpg);
+$under_h3_font: null;
+
+$under_h4_text: $color_text;
+$under_h4_bg: url(img/ico_logo.png) no-repeat 1% 30%;
+$under_h4_font: null;
+
+$under_h5_text: #fff;
+$under_h5_bg: $color_secondary;
+$under_h5_font: null;
+
+$under_h6_text: $color_danger;
+$under_h6_bg: null;
+$under_h6_font: null;
+
+//p-title
+$p_title_text: darken(
+  $color: $color_secondary,
+  $amount: 10
+);
+
+//診療時間テーブル
+$time_table_th_bg: $color_secondary;
+$time_table_th_text: #fff;
+$time_table_tbody_bg: null;
+$time_table_border: null;
+$table_01: $color_secondary; //診療時間テーブル用色クラス
+$table_02: $table_01;
+$table_03: $table_01;
+$table_04: $table_01;
+
+//基本テーブル
+$table_01_th_border: $color_primary;
+$table_01_td_border: $color_secondary;
+
+//.color01,.color02
+$color_01: $color_primary;
+$color_02: $color_secondary;
+
+$flow_arrow: #ccc; //流れパーツの矢$color_primary
+$border_table: $color_secondary; //枠線付きテーブル
+$fee_table: $color_danger; //料金テーブル
+
+//背景付きブロック
+$bg_block: #f1f1f1;
+
+//メディアクエリ
+$pc_min_width: 768;
+$sp_max_width: 767;
+$tab_min_width: 768;
+$tab_max_width: 1024;
+$breakpoints: (
+  "sp": "screen and (max-width: #{$sp_max_width}px)",
+  "pc": "screen and (min-width: #{$pc_min_width}px)",
+  "tab":
+  "screen and (min-width: #{$tab_min_width}px) and (max-width:#{$tab_max_width}px)"
+) !default;
+
+// $design_type: A;
+// .tst {
+//   @if $design_type == A {
+//     color:red;
+//   }@else if $design_type == B {
+//     color:blue;
+//   }
+// }

@@ -1,0 +1,151 @@
+html {
+  overflow-y: scroll;
+  &.drawerOpen {
+    overflow: hidden;
+  }
+}
+
+%drawer-btn-setting {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 0 solid;
+}
+
+.open-btn {
+  @extend %drawer-btn-setting;
+  z-index: 10;
+  &__line {
+    display: block;
+    background: #fff;
+    width: 100%;
+    height: 4px;
+    &:first-child,&:nth-child(2) {
+      margin-bottom: 10px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .js-clr & {
+      background: $color_accent;
+    }
+  }
+  @include mediaQuery(sp) {
+    top: 17px;
+    right: 10px;
+  }
+}
+
+.close-btn {
+  @extend %drawer-btn-setting;
+  &__line {
+    display: block;
+    background: #fff;
+    width: 100%;
+    height: 4px;
+    &:first-child {
+      position: absolute;
+      transform: rotate(45deg);
+    }
+    &:last-child {
+      position: absolute;
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  &__overlay {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: 0; //左から出したいときはleft
+  }
+  &[aria-expanded] {
+    transition: visibility 0.25s;
+    .drawer__overlay {
+      transition: opacity 0.25s linear;
+    }
+    .drawer__nav {
+      transition: transform 0.25s ease;
+    }
+  }
+  &[aria-expanded="true"] {
+    visibility: visible;
+    transition-duration: 0s;
+    .drawer__overlay {
+      opacity: 1;
+    }
+    .drawer__nav {
+      transform: translateX(0);
+    }
+  }
+  &[aria-expanded="false"] {
+    visibility: hidden;
+    .drawer__overlay {
+      opacity: 0;
+    }
+    .drawer__nav {
+      transform: translateX(100%); //左から出したいときは-100%
+    }
+  }
+}
+
+.nav {
+  padding: 80px 20px 0;
+  width: 400px;
+  height: 100%;
+  background: $color_primary;
+  color: #fff;
+  overflow: auto;
+  @include mediaQuery(sp) {
+    width: 80%;
+  }
+  &__item {
+    a {
+      position: relative;
+      display: block;
+      padding: 15px 0;
+      font-size: 3rem;
+      text-decoration: none;
+      transition: 0.4s;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 4px;
+        width: 100%;
+        background: $color_accent;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.4s;
+      }
+      &:hover {
+        color: $color_accent;
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}

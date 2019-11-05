@@ -1,0 +1,9 @@
+.footer {
+  padding: 30px 0;
+  background: $footer_bg;
+  color: $footer_text;
+  text-align: center;
+  @media (min-width: 768px) {
+    padding: 80px 0;
+  }
+}

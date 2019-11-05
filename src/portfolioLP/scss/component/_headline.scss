@@ -1,0 +1,74 @@
+//大見出し
+%title-l {
+  position: relative;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  font-family: $title_font_family;
+  word-break: break-word;
+  @include mediaQuery(pc) {
+    font-size: 3rem;
+  }
+}
+
+.title-l {
+  @extend %title-l;
+  margin: 0 0 1.5em;
+  &::after {
+    content: "";
+    display: block;
+    margin: 15px auto 0;
+    width: 40px;
+    height: 2px;
+    background: $color_primary;
+  }
+}
+
+//中見出し
+
+%title-m {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  font-family: $title_font_family;
+}
+
+.title-m {
+  @extend %title-m;
+  text-align: center;
+  margin-bottom: 1em;
+  &--typeB {
+    @extend %title-m;
+    margin-bottom: 1em;
+  }
+}
+
+//小見出し
+%title-s {
+  margin: 0 0 0.7em;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  font-family: $title_font_family;
+}
+
+.title-s {
+  @extend %title-s;
+}
+
+// .title-band {
+//   padding: 10px;
+//   background: url(img/sp_greeting_bg_l.png) no-repeat left/contain, url(img/sp_greeting_bg_r.png) no-repeat right/contain, url(img/pt_bg001.jpg);
+//   [class*="title"] {
+//     margin: 0;
+//   }
+//   @include mediaQuery(pc) {
+//     padding: 60px 0;
+//     background: url(img/greeting_bg_l.png) no-repeat left/contain, url(img/greeting_bg_r.png) no-repeat right/contain, url(img/pt_bg001.jpg);
+//   }
+// }

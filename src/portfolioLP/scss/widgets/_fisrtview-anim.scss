@@ -1,0 +1,28 @@
+//アニメーション
+.js-ready {
+  .logo {
+    opacity: 1;
+  }
+  .first-view {
+    &::after {
+      transition: 1s ease 0.5s;
+      height: 0;
+    }
+    &__txt {
+      &::after {
+        transition: 1s ease 2s;
+        left: 100%;
+      }
+    }
+  }
+  .u-line {
+    &--01 {
+      background-size: 100% 10px;
+      transition: background-size 1s ease 3.4s;
+    }
+    &--02 {
+      background-size: 100% 10px;
+      transition: background-size 1s ease 4.4s;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Site Title",
+  "number":"123-4567-890",
+  "description": "Site Description",
+  "keywords": "Site Keyword1, Site Keyword2",
+  "rootUrl": "http://example.com",
+  "ogpImage": "http://example.com/ogp-image.jpg",
+  "facebookAdmins": "",
+  "facebookAppId": "",
+  "twitterCard": "summary_large_image",
+  "twitterSite": "@SiteAccount"
+}

@@ -1,0 +1,52 @@
+<%
+  var data = {
+    pageTitle:'Skill'
+  }
+%>
+<%- include(relativePath + 'widgets/_header'); %>
+<%- include(relativePath + 'widgets/_drawer'); %>
+<main class="under-page">
+  <div class="page-band">
+    <h1 class="page-band__ttl"><%- data.pageTitle %></h1>
+  </div>
+  <div class="inner">
+    <%- include(relativePath + 'widgets/_breadcrumb',{data:data}); %>
+    <div class="content">
+      <div class="flex-row">
+        <div class="col-2">
+          <h3 class="title-m">HTML</h3>
+          <ul class="list-A">
+            <li class="list-A__item">W3C Markup Validator/Google Lighthouseでエラーがでないマークアップ</li>
+            <li class="list-A__item">EJSなどのテンプレートエンジンを利用し、素早く正確にコーディングします</li>
+            <li class="list-A__item">WordPressサイトの修正・簡単なカスタマイズ</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h3 class="title-m">CSS</h3>
+          <ul class="list-A">
+            <li class="list-A__item">RWD・リキッドレイアウトで、多様な環境でもユーザービリティが損なわれないWebページを作成します</li>
+            <li class="list-A__item">Sass、PostCSSを利用し、素早く正確にコーディングします</li>
+            <li class="list-A__item">BEM記法でコーディングし、CSSの保守性と拡張性を保ちます</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h3 class="title-m">JavaScript</h3>
+          <ul class="list-A">
+            <li class="list-A__item">基本的なプログラミングの理解</li>
+            <li class="list-A__item">フレームワーク:jQuery</li>
+            <li class="list-A__item">イベントに応じてDOM操作できます</li>
+            <li class="list-A__item">Gulpをメンテナンスして効率的にコーディングできる方法を考えます</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h3 class="title-m">その他</h3>
+          <ul class="list-A">
+            <li class="list-A__item">個人的な利用の範囲内でGitを利用しています</li>
+            <li class="list-A__item">知見がない周辺技術に関しても、プライベートの時間で勉強することで対応可能です</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include(relativePath + 'widgets/_footer'); %>

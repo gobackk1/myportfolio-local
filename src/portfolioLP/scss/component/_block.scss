@@ -1,0 +1,45 @@
+.block-A {
+  background: rgba(#fff, 0.9);
+  padding: 4%;
+  border-radius: 10px;
+}
+.block-B {
+  background: $color_primary;
+  padding: 20px;
+}
+
+.page-band {
+  padding: 30px 0;
+  background: url(img/main_bg.jpg) no-repeat center/cover;
+  &__ttl {
+    font-size: 3.4rem;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.content {
+  padding: 30px 0;
+  min-height: 600px;
+  @include mediaQuery(pc) {
+    padding: 60px 0;
+  }
+}
+
+.breadcrumb {
+  @include cf();
+  li {
+    float: left;
+    &:not(:last-child){
+      margin-right: 10px;
+      &::after {
+        content: "";
+        @include solidArrow(right, 10px, 1px, #000, null);
+      }
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+}
