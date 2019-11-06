@@ -91,6 +91,7 @@
         mqpacker()
       ]))
       .pipe(sourcemaps.write(setting.path.scss.sourcemaps))
+      .pipe(replace('/*!','/*'))
       .pipe(dest(setting.path.scss.dest));
 
   const ejsTask = () =>
