@@ -9,7 +9,7 @@
     if (navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/12\./)) {
       var pc = $('<script>',{
         charset: 'utf-8',
-        src: 'assets/js/jquery.nicescroll.min.js'
+        src: 'https://kksample.sakura.ne.jp/portfolio/wp-content/themes/portfoliotheme/js/jquery.nicescroll.min.js'
       });
       var s = $('[src*="main.js"]');
       s.before(pc);
