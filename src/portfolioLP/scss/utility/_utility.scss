@@ -79,8 +79,14 @@
   }
 }
 
-.ps {
+.pc {
   @include mediaQuery(sp) {
     display: none !important;
+  }
+}
+
+.link{
+  &:hover{
+    text-decoration: underline;
   }
 }
