@@ -17,6 +17,7 @@ body {
   font-family: $base_font_family;
   letter-spacing: 0.05em;
   font-size: 1.6rem;
+  word-break: break-all;
   @include mediaQuery(sp) {
     font-size: 1.4rem;
   }
@@ -77,10 +78,5 @@ em{
 p {
   &:not(:last-child) {
     margin-bottom: 1.4em;
-  }
-  @include mediaQuery(sp) {
-    &:last-child {
-      margin-bottom: 1.4em;
-    }
   }
 }
