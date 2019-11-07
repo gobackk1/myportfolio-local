@@ -3,8 +3,8 @@
   a {
     background: $btn_style_bg;
     border-radius: $btn_style_border_radius;
-    width: $btn_style_width;
-    max-width: 100%;
+    width: 100%;
+    max-width: $btn_style_width;
     padding: 15px 40px;
     margin: 0 auto;
     text-align: center;
