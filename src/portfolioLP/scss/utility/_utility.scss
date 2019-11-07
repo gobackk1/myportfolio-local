@@ -71,6 +71,11 @@
       align-self: baseline;
     }
   }
+  @include mediaQuery(sp) {
+    &__target ,&__target-right{
+      margin-top: 20px;
+    }
+  }
 }
 
 .sp {
@@ -85,8 +90,8 @@
   }
 }
 
-.link{
-  &:hover{
+.link {
+  &:hover {
     text-decoration: underline;
   }
 }
