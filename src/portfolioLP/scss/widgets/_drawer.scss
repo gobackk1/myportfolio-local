@@ -116,8 +116,8 @@ html {
   background: $color_primary;
   color: #fff;
   overflow: auto;
-  @include mediaQuery(sp) {
-    width: 80%;
+  &__ttl{
+    margin-bottom: 0;
   }
   &__item {
     a {
@@ -146,6 +146,12 @@ html {
           transform: scaleX(1);
         }
       }
+    }
+  }
+  @include mediaQuery(sp) {
+    width: 80%;
+    &__ttl{
+      font-size: 3rem;
     }
   }
 }
