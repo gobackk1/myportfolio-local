@@ -1,9 +1,10 @@
 <%
   var data = {
-    pageTitle:'Skill'
+    pageTitle:'Skill',
+    slug:'skill'
   }
 %>
-<%- include(relativePath + 'widgets/_header'); %>
+<%- include(relativePath + 'widgets/_header',{data:data}); %>
 <%- include(relativePath + 'widgets/_drawer'); %>
 <main class="under-page">
   <div class="page-band">

@@ -1,4 +1,9 @@
-<%- include(relativePath + 'widgets/_header'); %>
+<%
+  var data = {
+    slug:'top'
+  };
+%>
+<%- include(relativePath + 'widgets/_header',{data:data}); %>
 <%- include(relativePath + 'widgets/_drawer'); %>
 <%- include(relativePath + 'widgets/_firstview'); %>
 <%- include(relativePath + 'widgets/_main'); %>
