@@ -149,8 +149,7 @@
     var ua = navigator.userAgent;
     var winWidth;
     var breakPoint = 768;
-    var isSp = false;//ブレークポイント以下ならtrue
-    var timer = 0;
+    window.isSp = false;
 
     //uaに応じてbodyにクラスをつける
     if (ua.indexOf('iPhone') !== -1 || ua.indexOf('iPad') !== -1) {
@@ -167,49 +166,51 @@
       }
     }
 
-    //viewportに入ったららjs-showをつける
-    var pcPadding = 200;
-    var spPadding = 50;
-    var sections = [
-      '.history',
-      '.skill',
-      '.works',
-      '.contact'
-    ];
+    window.checkBp = checkBp;
 
-    checkBp();
-    isSp ? initOnScroll(spPadding) : initOnScroll(pcPadding);
+    // //viewportに入ったららjs-showをつける
+    // var pcPadding = 200;
+    // var spPadding = 50;
+    // var sections = [
+    //   '.history',
+    //   '.skill',
+    //   '.works',
+    //   '.contact'
+    // ];
 
-    function initOnScroll() {
-      $.each(sections, function (i, el) {
-        var $el = $body.find(el);
-        var elOffset = $el.offset().top;
-        var elHeight = $el.innerHeight();
-        var scrollTop;
+    // checkBp();
+    // isSp ? initOnScroll(spPadding) : initOnScroll(pcPadding);
 
-        $win.on('scroll', function () {
-          scrollTop = $win.scrollTop();
-          if (scrollTop + 200 > elOffset && elHeight + elOffset > scrollTop + 200) {
-            $el.addClass('js-show');
-          } else {
-            $el.removeClass('js-show');
-          }
-        });
-      });
-    }
+    // function initOnScroll() {
+    //   $.each(sections, function (i, el) {
+    //     var $el = $body.find(el);
+    //     var elOffset = $el.offset().top;
+    //     var elHeight = $el.innerHeight();
+    //     var scrollTop;
 
-    //関数を200msでデバウンスする
-    function onResize() {
-      if (timer > 0) {
-        clearTimeout(timer);
-      }
-      timer = setTimeout(function () {
-        checkBp();
-        isSp ? initOnScroll(spPadding) : initOnScroll(pcPadding);
-      }, 200);
-    }
+    //     $win.on('scroll', function () {
+    //       scrollTop = $win.scrollTop();
+    //       if (scrollTop + 200 > elOffset && elHeight + elOffset > scrollTop + 200) {
+    //         $el.addClass('js-show');
+    //       } else {
+    //         $el.removeClass('js-show');
+    //       }
+    //     });
+    //   });
+    // }
 
-    $win.on('resize', onResize);
+    // //関数を200msでデバウンスする
+    // function onResize() {
+    //   if (timer > 0) {
+    //     clearTimeout(timer);
+    //   }
+    //   timer = setTimeout(function () {
+    //     checkBp();
+    //     isSp ? initOnScroll(spPadding) : initOnScroll(pcPadding);
+    //   }, 200);
+    // }
+
+    // $win.on('resize', onResize);
 
   });
 
