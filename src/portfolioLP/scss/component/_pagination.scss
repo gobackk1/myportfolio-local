@@ -1,0 +1,61 @@
+.navigation {
+  width: 1000px;
+  max-width: 96%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.nav-links {
+  @include cf();
+  [aria-current="page"] {
+    background: $color_primary;
+    color: #fff;
+  }
+}
+
+.nav-previous {
+  float: right;
+  text-align: right;
+  width: 48%;
+  &::after {
+    content: "";
+    margin-left: 10px;
+    @include solidArrow(right, 8px, 1px, $color_primary, null);
+  }
+}
+
+.nav-next {
+  float: left;
+  width: 48%;
+  &::before {
+    content: "";
+    margin-right: 10px;
+    @include solidArrow(left, 8px, 1px, $color_primary, null);
+  }
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+.prev {
+  &::before {
+    content: "";
+    @include solidArrow(left, 8px, 1px, $color_primary, null);
+  }
+}
+
+.next {
+  &::before {
+    content: "";
+    @include solidArrow(right, 8px, 1px, $color_primary, null);
+  }
+}
+
+.page-numbers {
+  background: #ccc;
+  padding: 15px;
+  &:not(span):hover {
+    opacity: 0.7;
+  }
+}
