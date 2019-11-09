@@ -1,0 +1,33 @@
+<%
+  var data = {
+    pageTitle:'Infomation',
+    slug:'info'
+  }
+%>
+<%- include(relativePath + 'widgets/_header',{data:data}); %>
+<%- include(relativePath + 'widgets/_drawer'); %>
+<main class="under-page">
+  <div class="page-band">
+    <h1 class="page-band__ttl"><%- data.pageTitle %></h1>
+  </div>
+  <div class="inner">
+    <%- include(relativePath + 'widgets/_breadcrumb',{data:data}); %>
+    <div class="content">
+      <p>更新情報の一覧ページです。</p>
+      <h2 class="title-m--cat-ttl">更新情報を追加しました。</h2>
+      <p>更新情報を追加しました。今後ともMyportfolioをよろしくお願いいたします。</p>
+      <h2 class="title-m--cat-ttl">Hello world!</h2>
+      <p>WordPress へようこそ。こちらは最初の投稿です。編集または削除し、コンテンツ作成を始めてください。</p>
+    </div>
+  </div>
+</main>
+<nav class="navigation pagination" role="navigation">
+  <h2 class="screen-reader-text">投稿ナビゲーション</h2>
+  <div class="nav-links">
+    <a class="prev page-numbers" href="#"><span class="screen-reader-text">前へ</span></a>
+    <span aria-current="page" class="page-numbers current">1</span>
+    <a class="page-numbers" href="#">2</a>
+    <a class="next page-numbers" href="#"><span class="screen-reader-text">次へ</span></a>
+  </div>
+</nav>
+<%- include(relativePath + 'widgets/_footer'); %>
