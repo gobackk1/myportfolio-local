@@ -1,0 +1,18 @@
+.sc-info {
+  width: 500px;
+  max-width: 96%;
+  margin: 0 auto 4%;
+  @include cf();
+  dt {
+    margin-right: 20px;
+  }
+  dd {
+    margin-bottom: 10px;
+  }
+  @include mediaQuery(pc) {
+    dt {
+      float: left;
+      margin-bottom: 10px;
+    }
+  }
+}
