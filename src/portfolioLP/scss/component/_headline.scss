@@ -45,6 +45,18 @@
     @extend %title-m;
     margin-bottom: 1em;
   }
+  &--cat-ttl{
+    @extend %title-m;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    border-bottom: 1px solid;
+    a{
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 //小見出し
