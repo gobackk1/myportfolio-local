@@ -1,0 +1,30 @@
+<%
+  var data = {
+    pageTitle:'サイトマップ',
+    slug:'sitemap'
+  }
+%>
+<%- include(relativePath + 'widgets/_header',{data:data}); %>
+<%- include(relativePath + 'widgets/_drawer'); %>
+<main class="under-page">
+  <div class="page-band">
+    <h1 class="page-band__ttl"><%- data.pageTitle %></h1>
+  </div>
+  <div class="inner">
+    <%- include(relativePath + 'widgets/_breadcrumb',{data:data}); %>
+    <div class="content">
+      <div class="menu-sitemap-container">
+        <ul id="menu-sitemap" class="menu">
+          <li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-82"><a href="http://localhost/portfolio/">HOME</a></li>
+          <li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="http://localhost/portfolio/history/">History</a></li>
+          <li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://localhost/portfolio/skill/">Skill</a></li>
+          <li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a href="http://localhost/portfolio/works/">Works</a></li>
+          <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="http://localhost/portfolio/history/history-child/">History-child</a></li>
+          <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="http://localhost/portfolio/contact/">Contact</a></li>
+          <li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="http://localhost/portfolio/add/">add</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include(relativePath + 'widgets/_footer'); %>
